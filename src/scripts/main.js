@@ -9,7 +9,7 @@ function main() {
           restaurantListElement.innerHTML += `
           <div class="resto-item" tabindex="0">
             <div class="card">
-              <img class="resto-img" src=${restaurant.pictureId} alt="">
+              <img class="resto-img" src=${restaurant.pictureId} alt="${restaurant.name}">
               <div class="rating">
                 <span class="fa-thin fa-star star-icon" aria-label="rating"></span>
                 <p style= "display: inline">${restaurant.rating}</p>
