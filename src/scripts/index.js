@@ -1,20 +1,21 @@
+/* eslint-disable import/extensions */
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
-import './main.js'
-import main from './main.js';
-import '../../node_modules/font-awesome/css/font-awesome.min.css'
+import App from './views/app';
+import 'font-awesome/css/font-awesome.min.css';
+import swRegister from './utils/sw-register';
 
-main();
-const hamburgerButtonElement = document.querySelector('#hamburger');
-const drawerElement = document.querySelector('#drawer');
-const mainElement = document.querySelector('main');
- 
-hamburgerButtonElement.addEventListener('click', event => {
-  drawerElement.classList.toggle('open');
-  event.stopPropagation();
+const app = new App({
+  button: document.querySelector('#hamburger'),
+  drawer: document.querySelector('#drawer'),
+  content: document.querySelector('#main'),
 });
- 
-mainElement.addEventListener('click', event => {
-  drawerElement.classList.remove('open');
-  event.stopPropagation();
-})
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
+});

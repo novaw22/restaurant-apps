@@ -1,0 +1,18 @@
+{
+    "id": "restaurant-apps",
+    "start_url": "./index.html",
+    "name": "Restaurant App Lite",
+    "short_name": "RestoApp Lite",
+    "description": "Ayo makan di resto favoritmu",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#D84315",
+    "icons": [
+      {
+        "src": "/images/icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ]
+  }

@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Apps Starter Project</title>
+  <meta name="theme-color" content="#DB0000"/>
+  <link rel="apple-touch-icon" href="/images/icons/icon-512x512.png">
+  <link rel="manifest" href="./app.webmanifest">
+  <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+  <meta name="description" content="Find your favorite restaurant">
+  <title>Ayo Makan</title>
 </head>
 <body>
   <a href="#maincontent" class="skip-link">Menuju ke konten</a>
@@ -13,26 +18,17 @@
       <div class="nav_brand" tabindex="0">
         <h1>Ayo Makan</h1>
       </div>
-      <a id="hamburger" href="#" aria-label="navigation-menu">☰</a>
+      <button id="hamburger" aria-label="navigation-menu">☰</button>
       <nav id="drawer">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="#">Favorite</a></li>
+          <li><a href="#/home">Home</a></li>
+          <li><a href="#/favorite">Favorite</a></li>
           <li><a href="https://github.com/novaw22">About Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main>
-    <div class="hero" role="img" aria-label="hero image">
-      <div class="hero__inner">
-        <h2 class="hero__title">Pilihlah Menu Makanmu Hari Ini</h2>
-        <p class="hero__tagline">Nikmatilah menu makanmu di hari ini dengan makanan yang ada di restaurant kami</p>
-      </div>
-    </div>
-    <h2 id="maincontent" tabindex="0">Explore Restaurant</h2>
-      <div id="restaurantList" class="resto-list">tes</div>
-  </main>
+  <main id="main"></main>
   <footer tabindex="0">
     <p>copyright &copy 2022 - Yuk Makan</p>
   </footer> 
