@@ -13,7 +13,6 @@ class FavoriteRestaurantSearchView {
         <div id="restaurants" class="restaurants">
         </div>
       </div>
-
     `;
   }
 
@@ -31,12 +30,12 @@ class FavoriteRestaurantSearchView {
       html = this._getEmptyRestaurantTemplate();
     }
     document.getElementById('restaurants').innerHTML = html;
-    
+
     document.getElementById('restaurants').dispatchEvent(new Event('restaurants:updated'));
   }
 
   _getEmptyRestaurantTemplate() {
-    return `<div class="restaurant-item__not__found">Tidak ada restaurant untuk ditampilkan</div>`;
+    return '<div class="restaurant-item__not__found">Tidak ada restaurant untuk ditampilkan</div>';
   }
 }
 

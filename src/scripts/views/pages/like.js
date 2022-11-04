@@ -12,7 +12,7 @@ const Like = {
 
   async afterRender() {
     new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: RestaurantFavoriteIdb });
-    new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurants: RestaurantFavoriteIdb })
+    new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurants: RestaurantFavoriteIdb });
   },
 };
 
