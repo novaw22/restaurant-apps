@@ -2,10 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   entry: {
@@ -35,7 +36,7 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
-      maxSize: 70000,
+      maxSize: 50000,
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
@@ -64,19 +65,17 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
-          globOptions: {
-            ignore: ['**/images/**'],
-          },
         },
       ],
     }),
     new FaviconsWebpackPlugin({
       logo: path.resolve(__dirname, './src/public/images/icons/icon-512x512.png'),
     }),
+    new CleanWebpackPlugin(),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
     }),
-    
+
     new ImageminWebpackPlugin({
       plugins: [
         ImageminMozjpeg({
@@ -86,7 +85,7 @@ module.exports = {
       ],
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'disabled'
+      analyzerMode: 'disabled',
     }),
   ],
 };

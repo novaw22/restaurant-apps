@@ -80,7 +80,7 @@ nav a:hover {
   width: 100%;
   text-align: center;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("../public/images/heros/hero-image_2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("../public/images/heros/hero-image_2_large.jpg");
   background-position: center;
   margin-bottom: 50px;
 }
@@ -278,6 +278,11 @@ h4 {
   margin-bottom: 30px;
 }
 
+.search-bar #query {
+  padding: 12px 0px 12px 0px;
+  font-size: 14px;
+}
+
 footer {
   margin-top: 20px;
   padding: 20px;
@@ -303,6 +308,9 @@ footer {
 @media only screen and (max-width: 1000px) { 
   .resto-list, .restaurants {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("../public/images/heros/hero-image_2-medium.jpg");
   }
 }
 
@@ -356,6 +364,7 @@ footer {
   .hero {
     height: 250px;
     margin-bottom: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("../public/images/heros/hero-image_2-small.jpg");
   }
 
   .hero__title {

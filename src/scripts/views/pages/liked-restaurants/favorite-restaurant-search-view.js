@@ -7,7 +7,7 @@ class FavoriteRestaurantSearchView {
         <h2 tabindex="0">Restaurant Favoritmu</h2>
       </div>
       <div class="search-bar">
-        <input id="query" type="text" placeholder="cari...">
+        <input id="query" type="text" placeholder="cari..." tabindex="0">
       </div>
       <div id="restaurant-search-container">
         <div id="restaurants" class="restaurants">

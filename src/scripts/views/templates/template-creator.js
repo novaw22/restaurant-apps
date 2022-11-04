@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantDetailTemplate = (restaurant) => `
     <h3 tabindex="0" class="restaurant__title">${restaurant.name}</h3>
-    <img class="restaurant__poster" src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.pictureId}" alt="${restaurant.name}" />
+    <img class="restaurant__poster" src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.pictureId}" srcset="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.pictureId} 800w" alt="${restaurant.name}" />
     <div class="restaurant__overview">
         <h4>Deskripsi</h4>
         <p>${restaurant.description}</p>
@@ -33,9 +33,9 @@ const createRestaurantDetailTemplate = (restaurant) => `
     `;
 
 const createRestaurantItemTemplate = (restaurant) => `
-    <div class="resto-item lazyload" tabindex="0">
+    <div class="resto-item" tabindex="0">
         <div class="card"><a href="/#/detail/${restaurant.id}">
-            <img class="resto-img" src=${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId} alt="${restaurant.name || '-'}">
+            <img class="resto-img lazyload" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId} 370w" alt="${restaurant.name || '-'}">
             <div class="rating">
                 <span class="fa-thin fa-star star-icon" aria-label="rating"></span>
                 <p style= "display: inline">${restaurant.rating}</p>
